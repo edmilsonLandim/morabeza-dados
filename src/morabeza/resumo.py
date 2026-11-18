@@ -78,11 +78,14 @@ def main(argv: list[str]) -> None:
 
     print(f"Resumo de vendas: {caminho}")
     print(f"Número de vendas: {len(vendas)}")
-    print(f"Faturação total: {faturacao_total(vendas)} CVE")
+    print(f"Faturação total: {formatar_cve(faturacao_total(vendas))}")
     print("Faturação por ilha:")
     for ilha, valor in sorted(por_ilha.items(), key=lambda par: par[1], reverse=True):
-        print(f"  {ilha}: {valor} CVE")
+        print(f"  {ilha}: {formatar_cve(valor)}")
     print(f"Ilha com maior faturação: {ilha_top(por_ilha)}")
+    print("Faturação por mês:")
+    for mes, valor in faturacao_mensal(vendas).items():
+        print(f"  {mes}: {formatar_cve(valor)}")
 
 
 if __name__ == "__main__":
