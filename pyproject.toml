@@ -9,6 +9,10 @@ description = "Projeto de dados da Morabeza Distribuição (módulo Engenharia d
 requires-python = ">=3.10"
 dependencies = []
 
+[project.scripts]
+# Extensão do Laboratório 3: comando `morabeza --ilha Sal`
+morabeza = "morabeza.cli:main"
+
 [project.optional-dependencies]
 # Ferramentas de desenvolvimento (a partir da Sessão 1)
 dev = ["pytest>=8", "ruff>=0.6"]
